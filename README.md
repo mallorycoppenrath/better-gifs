@@ -1,0 +1,2 @@
+# bettergenius
+Javascript project
