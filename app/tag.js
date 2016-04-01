@@ -4,6 +4,8 @@ app.tag = {
     var counter = 0
     var tag = function Tag(description) {
       this.description = description;
+      this.view = false
+
       var that = this;
       this.gifs = function(){
         return app.gif.findBy({tag: this})

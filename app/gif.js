@@ -4,7 +4,7 @@ app.gif = {
     var counter = 0
     var gif = function Gif(url, tag) {
       this.url = url
-      this.tag = tag
+      this.tag = tag    
       var that = this;
       function initialize() {
         counter++
