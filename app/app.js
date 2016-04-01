@@ -1,7 +1,5 @@
-var app = {}
+$(function(){
+  $('input:submit').click(app.tag.controller.create.initialize)
+})
 
-// $(function(){
-//   $(':submit').click(function(event){
-//
-//   }
-// }
+var app = {}
