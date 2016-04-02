@@ -23,7 +23,7 @@ app.tag.controller.create = {
     render: function(giphy) {
       $('.giphy').append('<img src ="'+ giphy.url +'">')
       if(giphy.tag.view === false) {
-        $('.tag_button ul').append('<li><button type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button></li>')
+        $('.tag_button ul').append('<button type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
         giphy.tag.view = true
       }
     }
