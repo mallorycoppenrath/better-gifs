@@ -5,6 +5,7 @@ app.tag.controller.create = {
     event.preventDefault();
     $('.giphy').empty()
 
+
     var tagInput = $('#tag_input').val();
     $('#tag_input').val("");
 
@@ -19,6 +20,7 @@ app.tag.controller.create = {
       giphy.tag = tagObj
       giphy.article = article
 
+      app.gif.counter()
 
       app.tag.controller.create.render(giphy)
     })
@@ -28,7 +30,7 @@ app.tag.controller.create = {
       $('.giphy').append('<a href=' + giphy.article.url + ' target="_blank"><img src ="'+ giphy.url +'" height="250" width="300"></a>')
       $('.giphy_memo').append("Click for some surpise knowledge")
       if(giphy.tag.view === false) {
-        $('.tag_button ul').append('<button type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
+        $('.tag_button ul').append('<button style="width:100px;height:40px" type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
         giphy.tag.view = true
       }
     }

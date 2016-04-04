@@ -24,7 +24,8 @@ app.gif = {
     });
     },
   counter: function counter(){
-    var x = $('.counter').append(app.gif.all.length)
-    return x
+
+    $('.counter').text(app.gif.all.length)
+
    }
   }
