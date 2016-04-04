@@ -28,9 +28,9 @@ app.tag.controller.create = {
     render: function(giphy) {
       $('.giphy_memo').empty()
       $('.giphy').append('<a href=' + giphy.article.url + ' target="_blank"><img src ="'+ giphy.url +'" height="250" width="300"></a>')
-      $('.giphy_memo').append("Click for some surpise knowledge")
+      $('.giphy_memo').append("Click image for some surprise knowledge")
       if(giphy.tag.view === false) {
-        $('.tag_button ul').append('<button style="width:100px;height:40px" type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
+        $('.tag_button ul').append('<button style="width:100px;height:40px;border-radius:8px;background-color:#EDA6A5;font-family:"Helvetica Neue",sans-serif;font-size:14px;" type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
         giphy.tag.view = true
       }
     }

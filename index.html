@@ -2,15 +2,17 @@
 <html lang="en">
   <head>
   <style>
-  header { width: 940px; height: 100px; width: 1300px; solid #00000;text-align: center; /*background-color: turquoise;*/}
-  h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 75px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
-  body { color: #111; background-color: #FDFFB7; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; width: 100%;}
-  #tag_input {color: #111; background-color: #FDFFB7;}
-  p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 20px; text-align: justify; text-justify: inter-word; }
-  .tag_button {position:absolute; top:0; bottom:0; left:0;
-    width:175px; height: 5000px; background:#d279a6;; }
+  header { width: 940px; height: 100px; width: 1300px; solid #00000;text-align: center;}
+  h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 75px; font-weight: bold; letter-spacing: -1px; line-height: 1;}
+  body { color: #111; background-color: #FDFFB7; font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: 300; line-height: 24px; ; text-align: center; margin-left: 175px;}
+  #tag_input {color: #111; background-color: transparent; border-style: solid; border-width: 0px 0px 3px 0px; border-color: black; height: 20px; width: 200px; }
+  p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 12px; margin: 0 0; text-align: justify; text-justify: inter-word;}
+  .tag_button {position:fixed; top:0; bottom:0; left:0;
+    width:175px; height: 5000px; background:#92C5EB ; ; }
   ul { text-align:center; position:relative; width: 0px;}
-  #container { text-align: center; padding: 175px;}
+  .giphy_memo {font-size: 15px}
+  #submit {transition-duration: 0.4s; background-color: #EDA6A5; padding: 15px 32px; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; border-radius: 8px;}
+  #submit:hover {background-color: #E03B38;}
   </style>
 
 
@@ -27,7 +29,7 @@
 
     <h1 id="brand">Better Gifs</h1>
 
-    Total Gifs: 
+    <h2>Total Gifs:</h2>
     <div class='counter'>
     </div>
     <br>
@@ -39,14 +41,14 @@
        <label for="name"></label>
        <input id='tag_input' type="text" >
      </div>
-     <input type="submit">
+     <br>
+     <input type="submit" input id="submit">
    </form>
+   <br>
 
-   <div id="container">
    <div class="giphy">
    </div>
    <div class="giphy_memo">
-   </div>
    </div>
 
 <div class="tag_button">
