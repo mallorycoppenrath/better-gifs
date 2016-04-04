@@ -15,21 +15,16 @@ app.tag.controller.create = {
       var tagObj = tag[0]
     }
 
-    var promiseArticle = app.tag.adapter1.getBy(tagInput).then(function(article){
-      debugger
-      })
-
-
-
-    var promise = app.tag.adapter.getBy(tagObj).then(function(giphy){
+    var promise = $.when(app.tag.adapter.getBy(tagObj), app.tag.adapter1.getBy(tagInput)).then(function(giphy, article){
       giphy.tag = tagObj
+      giphy.article = article
+
 
       app.tag.controller.create.render(giphy)
     })
-
     },
     render: function(giphy) {
-      $('.giphy').append('<img src ="'+ giphy.url +'">')
+      $('.giphy').append('<a href=' + giphy.article.url + ' target="_blank"><img src ="'+ giphy.url +'"></a>')
       if(giphy.tag.view === false) {
         $('.tag_button ul').append('<button type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
         giphy.tag.view = true
@@ -80,9 +75,9 @@ app.tag.adapter1 = {
     }).then(function(data){
       var article;
       var newArticle
-
         article = data.response.docs[randomize(10)]
-        newArticle = new app.article.new(article.headline.main)
+
+        newArticle = new app.article.new(article.headline.main, article.web_url)
         return newArticle
     })
   }
