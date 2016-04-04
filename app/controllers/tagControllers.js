@@ -24,7 +24,9 @@ app.tag.controller.create = {
     })
     },
     render: function(giphy) {
-      $('.giphy').append('<a href=' + giphy.article.url + ' target="_blank"><img src ="'+ giphy.url +'"></a>')
+      $('.giphy_memo').empty()
+      $('.giphy').append('<a href=' + giphy.article.url + ' target="_blank"><img src ="'+ giphy.url +'" height="250" width="300"></a>')
+      $('.giphy_memo').append("Click for some surpise knowledge")
       if(giphy.tag.view === false) {
         $('.tag_button ul').append('<button type="button" id="'+ giphy.tag.id +'">'+ giphy.tag.description +'</button>')
         giphy.tag.view = true
@@ -36,12 +38,14 @@ app.tag.controller.create = {
 app.tag.controller.show = {
   initialize: function(idInput){
     $('.giphy').empty()
+    $('.giphy_memo').empty()
+
     var tag = app.tag.findBy({id: idInput})
     app.tag.controller.show.render(tag[0])
   },
   render: function(tag){
     tag.gifs().forEach(function(gif){
-      $('.giphy').append('<img src ="'+ gif.url +'">')
+      $('.giphy').append('<a href=' + gif.article.url + ' target="_blank"><img src ="'+ gif.url +'"height="250" width="300"></a>')
     })
   }
 }

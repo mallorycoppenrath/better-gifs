@@ -23,4 +23,8 @@ app.gif = {
       return gif[key] == value;
     });
     },
+  counter: function counter(){
+    var x = $('.counter').append(app.gif.all.length)
+    return x
+   }
   }
